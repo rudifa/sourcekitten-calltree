@@ -1,0 +1,292 @@
+{
+  "key.diagnostic_stage" : "source.diagnostic.stage.swift.parse",
+  "key.length" : 400,
+  "key.offset" : 0,
+  "key.substructure" : [
+    {
+      "key.accessibility" : "source.lang.swift.accessibility.internal",
+      "key.bodylength" : 104,
+      "key.bodyoffset" : 51,
+      "key.kind" : "source.lang.swift.decl.function.free",
+      "key.length" : 138,
+      "key.name" : "fibonacci(_:)",
+      "key.namelength" : 19,
+      "key.nameoffset" : 23,
+      "key.offset" : 18,
+      "key.substructure" : [
+        {
+          "key.kind" : "source.lang.swift.decl.var.parameter",
+          "key.length" : 8,
+          "key.name" : "n",
+          "key.offset" : 33,
+          "key.typename" : "Int"
+        },
+        {
+          "key.elements" : [
+            {
+              "key.kind" : "source.lang.swift.structure.elem.condition_expr",
+              "key.length" : 6,
+              "key.offset" : 59
+            }
+          ],
+          "key.kind" : "source.lang.swift.stmt.if",
+          "key.length" : 98,
+          "key.offset" : 56,
+          "key.substructure" : [
+            {
+              "key.bodylength" : 22,
+              "key.bodyoffset" : 67,
+              "key.kind" : "source.lang.swift.stmt.brace",
+              "key.length" : 24,
+              "key.offset" : 66
+            },
+            {
+              "key.bodylength" : 56,
+              "key.bodyoffset" : 97,
+              "key.kind" : "source.lang.swift.stmt.brace",
+              "key.length" : 58,
+              "key.offset" : 96,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 5,
+                  "key.bodyoffset" : 123,
+                  "key.kind" : "source.lang.swift.expr.call",
+                  "key.length" : 16,
+                  "key.name" : "fibonacci",
+                  "key.namelength" : 9,
+                  "key.nameoffset" : 113,
+                  "key.offset" : 113,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 5,
+                      "key.bodyoffset" : 123,
+                      "key.kind" : "source.lang.swift.expr.argument",
+                      "key.length" : 5,
+                      "key.offset" : 123
+                    }
+                  ]
+                },
+                {
+                  "key.bodylength" : 5,
+                  "key.bodyoffset" : 142,
+                  "key.kind" : "source.lang.swift.expr.call",
+                  "key.length" : 16,
+                  "key.name" : "fibonacci",
+                  "key.namelength" : 9,
+                  "key.nameoffset" : 132,
+                  "key.offset" : 132,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 5,
+                      "key.bodyoffset" : 142,
+                      "key.kind" : "source.lang.swift.expr.argument",
+                      "key.length" : 5,
+                      "key.offset" : 142
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "key.typename" : "Int"
+    },
+    {
+      "key.elements" : [
+        {
+          "key.kind" : "source.lang.swift.structure.elem.condition_expr",
+          "key.length" : 31,
+          "key.offset" : 162
+        }
+      ],
+      "key.kind" : "source.lang.swift.stmt.if",
+      "key.length" : 240,
+      "key.offset" : 159,
+      "key.substructure" : [
+        {
+          "key.bodylength" : 160,
+          "key.bodyoffset" : 195,
+          "key.kind" : "source.lang.swift.stmt.brace",
+          "key.length" : 162,
+          "key.offset" : 194,
+          "key.substructure" : [
+            {
+              "key.kind" : "source.lang.swift.decl.var.local",
+              "key.length" : 34,
+              "key.name" : "arg",
+              "key.namelength" : 3,
+              "key.nameoffset" : 203,
+              "key.offset" : 199
+            },
+            {
+              "key.bodylength" : 1,
+              "key.bodyoffset" : 231,
+              "key.kind" : "source.lang.swift.expr.call",
+              "key.length" : 24,
+              "key.name" : "CommandLine.arguments",
+              "key.namelength" : 21,
+              "key.nameoffset" : 209,
+              "key.offset" : 209,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 1,
+                  "key.bodyoffset" : 231,
+                  "key.kind" : "source.lang.swift.expr.argument",
+                  "key.length" : 1,
+                  "key.offset" : 231
+                }
+              ]
+            },
+            {
+              "key.elements" : [
+                {
+                  "key.kind" : "source.lang.swift.structure.elem.condition_expr",
+                  "key.length" : 25,
+                  "key.offset" : 242
+                }
+              ],
+              "key.kind" : "source.lang.swift.stmt.if",
+              "key.length" : 115,
+              "key.offset" : 239,
+              "key.substructure" : [
+                {
+                  "key.kind" : "source.lang.swift.decl.var.local",
+                  "key.length" : 1,
+                  "key.name" : "n",
+                  "key.namelength" : 1,
+                  "key.nameoffset" : 246,
+                  "key.offset" : 246
+                },
+                {
+                  "key.bodylength" : 3,
+                  "key.bodyoffset" : 254,
+                  "key.kind" : "source.lang.swift.expr.call",
+                  "key.length" : 8,
+                  "key.name" : "Int",
+                  "key.namelength" : 3,
+                  "key.nameoffset" : 250,
+                  "key.offset" : 250,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 3,
+                      "key.bodyoffset" : 254,
+                      "key.kind" : "source.lang.swift.expr.argument",
+                      "key.length" : 3,
+                      "key.offset" : 254
+                    }
+                  ]
+                },
+                {
+                  "key.bodylength" : 33,
+                  "key.bodyoffset" : 269,
+                  "key.kind" : "source.lang.swift.stmt.brace",
+                  "key.length" : 35,
+                  "key.offset" : 268,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 12,
+                      "key.bodyoffset" : 284,
+                      "key.kind" : "source.lang.swift.expr.call",
+                      "key.length" : 19,
+                      "key.name" : "print",
+                      "key.namelength" : 5,
+                      "key.nameoffset" : 278,
+                      "key.offset" : 278,
+                      "key.substructure" : [
+                        {
+                          "key.bodylength" : 12,
+                          "key.bodyoffset" : 284,
+                          "key.kind" : "source.lang.swift.expr.argument",
+                          "key.length" : 12,
+                          "key.offset" : 284,
+                          "key.substructure" : [
+                            {
+                              "key.bodylength" : 1,
+                              "key.bodyoffset" : 294,
+                              "key.kind" : "source.lang.swift.expr.call",
+                              "key.length" : 12,
+                              "key.name" : "fibonacci",
+                              "key.namelength" : 9,
+                              "key.nameoffset" : 284,
+                              "key.offset" : 284,
+                              "key.substructure" : [
+                                {
+                                  "key.bodylength" : 1,
+                                  "key.bodyoffset" : 294,
+                                  "key.kind" : "source.lang.swift.expr.argument",
+                                  "key.length" : 1,
+                                  "key.offset" : 294
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "key.bodylength" : 43,
+                  "key.bodyoffset" : 310,
+                  "key.kind" : "source.lang.swift.stmt.brace",
+                  "key.length" : 45,
+                  "key.offset" : 309,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 22,
+                      "key.bodyoffset" : 325,
+                      "key.kind" : "source.lang.swift.expr.call",
+                      "key.length" : 29,
+                      "key.name" : "print",
+                      "key.namelength" : 5,
+                      "key.nameoffset" : 319,
+                      "key.offset" : 319,
+                      "key.substructure" : [
+                        {
+                          "key.bodylength" : 22,
+                          "key.bodyoffset" : 325,
+                          "key.kind" : "source.lang.swift.expr.argument",
+                          "key.length" : 22,
+                          "key.offset" : 325
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key.bodylength" : 35,
+          "key.bodyoffset" : 363,
+          "key.kind" : "source.lang.swift.stmt.brace",
+          "key.length" : 37,
+          "key.offset" : 362,
+          "key.substructure" : [
+            {
+              "key.bodylength" : 22,
+              "key.bodyoffset" : 374,
+              "key.kind" : "source.lang.swift.expr.call",
+              "key.length" : 29,
+              "key.name" : "print",
+              "key.namelength" : 5,
+              "key.nameoffset" : 368,
+              "key.offset" : 368,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 22,
+                  "key.bodyoffset" : 374,
+                  "key.kind" : "source.lang.swift.expr.argument",
+                  "key.length" : 22,
+                  "key.offset" : 374
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
