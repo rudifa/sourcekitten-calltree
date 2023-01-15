@@ -88,9 +88,10 @@ class VisitorFuncDeclAndCall:
         Collects their names in a list.
         Recognizes function method calls in visited nodes."""
 
-    def __init__(self):
+    def __init__(self, exclusion_list=[]):
         self.funcs_and_calls = {}  # key: method name, value: list of call sites
         self.latest_func_name = ""
+        self.exclusion_list = exclusion_list
 
     def process(self, node):
         if isinstance(node, dict):
@@ -102,8 +103,9 @@ class VisitorFuncDeclAndCall:
                 elif node["key.kind"] == "source.lang.swift.expr.call":
                     if "key.name" in node:
                         called_func_name = node["key.name"]
-                        self.funcs_and_calls[self.latest_func_name].append(
-                            called_func_name)
+                        if called_func_name not in self.exclusion_list:
+                            self.funcs_and_calls[self.latest_func_name].append(
+                                called_func_name)
             except KeyError:
                 #print("KeyError:", node)
                 pass
@@ -132,7 +134,7 @@ def plotter(funcs_and_calls):
     for func_name, called_funcs in funcs_and_calls.items():
         dot.node(func_name, func_name, rank='source')
         for called_func in called_funcs:
-            dot.edge(func_name, called_func, constraint='true')
+            dot.edge(func_name, called_func)
     dot.render('graphviz-output/calltree.gv', view=True)
 
 # runners
@@ -151,7 +153,9 @@ def run_visitor_expr_call(top_node):
 
 
 def run_visitor_func_decl_and_call(top_node):
-    visitor = VisitorFuncDeclAndCall()
+    exclusion_list = ["printClassAndFunc",
+                      "self.printClassAndFunc", "print", "String"]
+    visitor = VisitorFuncDeclAndCall(exclusion_list)
     walker(top_node, visitor)
     # print("visitor:", visitor.funcs_and_calls)
     json_str = json.dumps(visitor.funcs_and_calls, indent=4)
