@@ -110,7 +110,8 @@ class VisitorFuncDeclAndCall:
                 #print("KeyError:", node)
                 pass
 
-    def result(self):
+    def json_compatible_result(self):
+        """Converts the set of callees to a list for JSON serialization."""
         return {k: list(v) for k, v in self.funcs_and_calls.items()}
 
 
@@ -163,7 +164,7 @@ def run_visitor_func_decl_and_call(top_node):
     visitor = VisitorFuncDeclAndCall(exclusion_list)
     walker(top_node, visitor)
     # print("visitor:", visitor.funcs_and_calls)
-    json_str = json.dumps(visitor.result(), indent=4)
+    json_str = json.dumps(visitor.json_compatible_result(), indent=4)
     print(json_str)
     plotter(visitor.funcs_and_calls)
 

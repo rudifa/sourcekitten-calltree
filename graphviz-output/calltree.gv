@@ -2,12 +2,7 @@ digraph {
 	graph [ratio=0.2]
 	size="20,12"
 	fibonacci [label=fibonacci rank=source]
-	fibonacci -> fibonacci [constraint=true]
-	fibonacci -> fibonacci [constraint=true]
-	fibonacci -> "CommandLine.arguments" [constraint=true]
-	fibonacci -> Int [constraint=true]
-	fibonacci -> print [constraint=true]
-	fibonacci -> fibonacci [constraint=true]
-	fibonacci -> print [constraint=true]
-	fibonacci -> print [constraint=true]
+	fibonacci -> fibonacci
+	fibonacci -> Int
+	fibonacci -> "CommandLine.arguments"
 }
