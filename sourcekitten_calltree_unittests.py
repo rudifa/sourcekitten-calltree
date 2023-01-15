@@ -40,8 +40,8 @@ class Testing(unittest.TestCase):
         visitor = VisitorFuncDeclAndCall()
         walker(top_node, visitor)
         # print(visitor.funcs_and_calls)
-        self.assertEqual(visitor.funcs_and_calls, {'fibonacci': [
-                         'fibonacci', 'fibonacci', 'CommandLine.arguments', 'Int', 'print', 'fibonacci', 'print', 'print']})
+        self.assertEqual(visitor.funcs_and_calls,  {'fibonacci': {
+                         'fibonacci', 'Int', 'print', 'CommandLine.arguments'}})
 
 
 if __name__ == '__main__':

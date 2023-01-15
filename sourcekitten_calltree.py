@@ -89,7 +89,7 @@ class VisitorFuncDeclAndCall:
         Recognizes function method calls in visited nodes."""
 
     def __init__(self, exclusion_list=[]):
-        self.funcs_and_calls = {}  # key: method name, value: list of call sites
+        self.funcs_and_calls = {}  # dict where key: method name, value: set of callee names
         self.latest_func_name = ""
         self.exclusion_list = exclusion_list
 
@@ -99,16 +99,21 @@ class VisitorFuncDeclAndCall:
                 if node["key.kind"] in ["source.lang.swift.decl.function.method.instance", "source.lang.swift.decl.function.free"]:
                     func_name = drop_suffix_parens(node["key.name"])
                     self.latest_func_name = func_name
-                    self.funcs_and_calls.update({func_name: []})
+                    self.funcs_and_calls.update({func_name: set()})
                 elif node["key.kind"] == "source.lang.swift.expr.call":
                     if "key.name" in node:
                         called_func_name = node["key.name"]
                         if called_func_name not in self.exclusion_list:
-                            self.funcs_and_calls[self.latest_func_name].append(
+                            self.funcs_and_calls[self.latest_func_name].add(
                                 called_func_name)
             except KeyError:
                 #print("KeyError:", node)
                 pass
+
+    def result(self):
+        return {k: list(v) for k, v in self.funcs_and_calls.items()}
+
+
 # walker
 
 
@@ -158,7 +163,7 @@ def run_visitor_func_decl_and_call(top_node):
     visitor = VisitorFuncDeclAndCall(exclusion_list)
     walker(top_node, visitor)
     # print("visitor:", visitor.funcs_and_calls)
-    json_str = json.dumps(visitor.funcs_and_calls, indent=4)
+    json_str = json.dumps(visitor.result(), indent=4)
     print(json_str)
     plotter(visitor.funcs_and_calls)
 
