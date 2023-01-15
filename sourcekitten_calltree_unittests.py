@@ -1,7 +1,7 @@
 #! python
 
 import unittest
-from sourcekitten_calltree import VisitorFuncDecl, VisitorExprCall, walker
+from sourcekitten_calltree import walker, VisitorFuncDecl, VisitorExprCall, VisitorFuncDeclAndCall
 from sourcekitten_calltree import print_list, read_json_file
 
 
@@ -34,6 +34,14 @@ class Testing(unittest.TestCase):
         walker(top_node, visitor)
         self.assertEqual(visitor.method_names, [
                          'fibonacci', 'fibonacci', 'CommandLine.arguments', 'Int', 'print', 'fibonacci', 'print', 'print'])
+
+    def test_walker_funcs_and_calls(self):
+        top_node = read_json_file("sample-script.json")
+        visitor = VisitorFuncDeclAndCall()
+        walker(top_node, visitor)
+        # print(visitor.funcs_and_calls)
+        self.assertEqual(visitor.funcs_and_calls, {'fibonacci': [
+                         'fibonacci', 'fibonacci', 'CommandLine.arguments', 'Int', 'print', 'fibonacci', 'print', 'print']})
 
 
 if __name__ == '__main__':
