@@ -43,6 +43,15 @@ class Testing(unittest.TestCase):
         self.assertEqual(visitor.funcs_and_calls,  {'fibonacci': {
                          'fibonacci', 'Int', 'print', 'CommandLine.arguments'}})
 
+    def test_walker_funcs_and_calls_2(self):
+        top_node = read_json_file("sample-script.json")
+        exclude_list = ["print"]
+        visitor = VisitorFuncDeclAndCall(exclude_list)
+        walker(top_node, visitor)
+        # print(visitor.funcs_and_calls)
+        self.assertEqual(visitor.funcs_and_calls,  {'fibonacci': {
+                         'fibonacci', 'CommandLine.arguments', 'Int'}})
+
 
 if __name__ == '__main__':
     unittest.main()
