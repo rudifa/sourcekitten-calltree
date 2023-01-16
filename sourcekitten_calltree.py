@@ -4,6 +4,7 @@
 
 import json
 import sys
+import os
 import re
 import argparse
 from graphviz import Digraph
@@ -107,7 +108,7 @@ class VisitorFuncDeclAndCall:
                             self.funcs_and_calls[self.latest_func_name].add(
                                 called_func_name)
             except KeyError:
-                #print("KeyError:", node)
+                # print("KeyError:", node)
                 pass
 
     def json_compatible_result(self):
@@ -119,7 +120,7 @@ class VisitorFuncDeclAndCall:
 
 
 def walker(node, visitor):
-    #print("walker:", node)
+    # print("walker:", node)
     if isinstance(node, dict):
         visitor.process(node)
         for key, value in node.items():
@@ -132,7 +133,7 @@ def walker(node, visitor):
 # plotter
 
 
-def plotter(funcs_and_calls):
+def plotter(funcs_and_calls, basename):
     dot = Digraph(comment='')
     dot.attr("graph", ratio="0.2")
     dot.attr(size='20,12')
@@ -141,7 +142,7 @@ def plotter(funcs_and_calls):
         dot.node(func_name, func_name, rank='source')
         for called_func in called_funcs:
             dot.edge(func_name, called_func)
-    dot.render('graphviz-output/calltree.gv', view=True)
+    dot.render(f'graphviz-output/{basename}.calltree.gv', view=True)
 
 # runners
 
@@ -158,7 +159,7 @@ def run_visitor_expr_call(top_node):
     print("visitor_call:", visitor_call.method_names)
 
 
-def run_visitor_func_decl_and_call(top_node):
+def run_visitor_func_decl_and_call(top_node, basename):
     exclusion_list = ["printClassAndFunc",
                       "self.printClassAndFunc", "print", "String"]
     visitor = VisitorFuncDeclAndCall(exclusion_list)
@@ -166,27 +167,16 @@ def run_visitor_func_decl_and_call(top_node):
     # print("visitor:", visitor.funcs_and_calls)
     json_str = json.dumps(visitor.json_compatible_result(), indent=4)
     print(json_str)
-    plotter(visitor.funcs_and_calls)
+    plotter(visitor.funcs_and_calls, basename)
 
 
-def main(top_node):
-    # try:
-    #     top_node = json.loads(sys.stdin.read())
-    # except json.JSONDecodeError as e:
-    #     print(f'Error parsing JSON: {e}')
-    #     return
+def main(filepath):
 
-    # Parse the JSON output of the sourcekitten structure command like
-    # sourcekitten structure --file shAre/Controller/PrincipalViewController.swift  >  docs/PrincipalViewController.json
+    basename = os.path.basename(filepath)
 
-    # usage:
-    # cat PrincipalViewController.json | sourcekitten-calltree2.py
+    top_node = read_json_file(filepath)
 
-    # run_visitor_func_decl(top_node)
-
-    # run_visitor_expr_call(top_node)
-
-    run_visitor_func_decl_and_call(top_node)
+    run_visitor_func_decl_and_call(top_node, basename)
 
 
 if __name__ == '__main__':
@@ -198,6 +188,4 @@ if __name__ == '__main__':
 
     print(f'Processing file: {args.file}')
 
-    top_node = read_json_file(args.file)
-
-    main(top_node)
+    main(args.file)

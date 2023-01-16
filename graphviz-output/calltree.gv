@@ -1,8 +1,0 @@
-digraph {
-	graph [ratio=0.2]
-	size="20,12"
-	fibonacci [label=fibonacci rank=source]
-	fibonacci -> fibonacci
-	fibonacci -> Int
-	fibonacci -> "CommandLine.arguments"
-}
