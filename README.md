@@ -28,37 +28,4 @@ How to generate a calltree for a Swift file:
 
 ### issues
 
-- problem with nested functions (see `PrincipalViewController` `updateLockBtn` which appears to recurse, in the call tree)
-- `VisitorFuncDeclAndCall` should detect the end of a func declaration, by tracking the nesting levels
-- a likely workaround would be to move inner function declarations after the code that calls them, e.g. in `updateLockAndBankingBtns`
-
-### wip
-
-- several variants proposed by chatGPT
-
-```
-python: parse this json
-{"n":"A","s":[{"n":"B","s":{"n":"C"}},{"n":"D","s":{"n":"E"}}]},
-and write a walker function to visit recursively each node and submit
-the node to a visitor object which keeps a stack of visited parent nodes;
-protect against accessing inexistent components
-
-
-python: parse this json
-{"n":"A","s":[{"n":"B","s":{"n":"C"}},{"n":"D","s":{"n":"E"}}]},
-and write a walker function to visit recursively each node and submit
-the node to a visitor object which keeps a stack of visited parent nodes;
-protect against accessing inexistent components; if possible let the visitor
-do all the stack bookkeeping
-
-```
-
-`model_2.py` looks promising, but the walker does the stack work
-
-`model_3.py` and `model_4.py` do not do the right thing; copying stack or the walker
-with its stack might open a possibility for the visitor to do most of the work
-
-Revised `model_4.py`looks fairly good:
-
-- the walker pushes and pops the visitor.stack
-- visitor can use the stack to draw conclusions
+- none known
