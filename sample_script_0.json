@@ -1,6 +1,6 @@
 {
   "key.diagnostic_stage" : "source.diagnostic.stage.swift.parse",
-  "key.length" : 400,
+  "key.length" : 456,
   "key.offset" : 0,
   "key.substructure" : [
     {
@@ -93,48 +93,108 @@
       "key.typename" : "Int"
     },
     {
+      "key.accessibility" : "source.lang.swift.accessibility.internal",
+      "key.bodylength" : 25,
+      "key.bodyoffset" : 189,
+      "key.kind" : "source.lang.swift.decl.function.free",
+      "key.length" : 57,
+      "key.name" : "test_fibonacci(_:)",
+      "key.namelength" : 24,
+      "key.nameoffset" : 163,
+      "key.offset" : 158,
+      "key.substructure" : [
+        {
+          "key.kind" : "source.lang.swift.decl.var.parameter",
+          "key.length" : 8,
+          "key.name" : "n",
+          "key.offset" : 178,
+          "key.typename" : "Int"
+        },
+        {
+          "key.bodylength" : 12,
+          "key.bodyoffset" : 200,
+          "key.kind" : "source.lang.swift.expr.call",
+          "key.length" : 19,
+          "key.name" : "print",
+          "key.namelength" : 5,
+          "key.nameoffset" : 194,
+          "key.offset" : 194,
+          "key.substructure" : [
+            {
+              "key.bodylength" : 12,
+              "key.bodyoffset" : 200,
+              "key.kind" : "source.lang.swift.expr.argument",
+              "key.length" : 12,
+              "key.offset" : 200,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 1,
+                  "key.bodyoffset" : 210,
+                  "key.kind" : "source.lang.swift.expr.call",
+                  "key.length" : 12,
+                  "key.name" : "fibonacci",
+                  "key.namelength" : 9,
+                  "key.nameoffset" : 200,
+                  "key.offset" : 200,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 1,
+                      "key.bodyoffset" : 210,
+                      "key.kind" : "source.lang.swift.expr.argument",
+                      "key.length" : 1,
+                      "key.offset" : 210
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key.elements" : [
         {
           "key.kind" : "source.lang.swift.structure.elem.condition_expr",
           "key.length" : 31,
-          "key.offset" : 162
+          "key.offset" : 220
         }
       ],
       "key.kind" : "source.lang.swift.stmt.if",
-      "key.length" : 240,
-      "key.offset" : 159,
+      "key.length" : 238,
+      "key.offset" : 217,
       "key.substructure" : [
         {
-          "key.bodylength" : 160,
-          "key.bodyoffset" : 195,
+          "key.bodylength" : 158,
+          "key.bodyoffset" : 253,
           "key.kind" : "source.lang.swift.stmt.brace",
-          "key.length" : 162,
-          "key.offset" : 194,
+          "key.length" : 160,
+          "key.offset" : 252,
           "key.substructure" : [
             {
               "key.kind" : "source.lang.swift.decl.var.local",
               "key.length" : 34,
               "key.name" : "arg",
               "key.namelength" : 3,
-              "key.nameoffset" : 203,
-              "key.offset" : 199
+              "key.nameoffset" : 261,
+              "key.offset" : 257
             },
             {
               "key.bodylength" : 1,
-              "key.bodyoffset" : 231,
+              "key.bodyoffset" : 289,
               "key.kind" : "source.lang.swift.expr.call",
               "key.length" : 24,
               "key.name" : "CommandLine.arguments",
               "key.namelength" : 21,
-              "key.nameoffset" : 209,
-              "key.offset" : 209,
+              "key.nameoffset" : 267,
+              "key.offset" : 267,
               "key.substructure" : [
                 {
                   "key.bodylength" : 1,
-                  "key.bodyoffset" : 231,
+                  "key.bodyoffset" : 289,
                   "key.kind" : "source.lang.swift.expr.argument",
                   "key.length" : 1,
-                  "key.offset" : 231
+                  "key.offset" : 289
                 }
               ]
             },
@@ -143,84 +203,63 @@
                 {
                   "key.kind" : "source.lang.swift.structure.elem.condition_expr",
                   "key.length" : 25,
-                  "key.offset" : 242
+                  "key.offset" : 300
                 }
               ],
               "key.kind" : "source.lang.swift.stmt.if",
-              "key.length" : 115,
-              "key.offset" : 239,
+              "key.length" : 113,
+              "key.offset" : 297,
               "key.substructure" : [
                 {
                   "key.kind" : "source.lang.swift.decl.var.local",
                   "key.length" : 1,
                   "key.name" : "n",
                   "key.namelength" : 1,
-                  "key.nameoffset" : 246,
-                  "key.offset" : 246
+                  "key.nameoffset" : 304,
+                  "key.offset" : 304
                 },
                 {
                   "key.bodylength" : 3,
-                  "key.bodyoffset" : 254,
+                  "key.bodyoffset" : 312,
                   "key.kind" : "source.lang.swift.expr.call",
                   "key.length" : 8,
                   "key.name" : "Int",
                   "key.namelength" : 3,
-                  "key.nameoffset" : 250,
-                  "key.offset" : 250,
+                  "key.nameoffset" : 308,
+                  "key.offset" : 308,
                   "key.substructure" : [
                     {
                       "key.bodylength" : 3,
-                      "key.bodyoffset" : 254,
+                      "key.bodyoffset" : 312,
                       "key.kind" : "source.lang.swift.expr.argument",
                       "key.length" : 3,
-                      "key.offset" : 254
+                      "key.offset" : 312
                     }
                   ]
                 },
                 {
-                  "key.bodylength" : 33,
-                  "key.bodyoffset" : 269,
+                  "key.bodylength" : 31,
+                  "key.bodyoffset" : 327,
                   "key.kind" : "source.lang.swift.stmt.brace",
-                  "key.length" : 35,
-                  "key.offset" : 268,
+                  "key.length" : 33,
+                  "key.offset" : 326,
                   "key.substructure" : [
                     {
-                      "key.bodylength" : 12,
-                      "key.bodyoffset" : 284,
+                      "key.bodylength" : 1,
+                      "key.bodyoffset" : 351,
                       "key.kind" : "source.lang.swift.expr.call",
-                      "key.length" : 19,
-                      "key.name" : "print",
-                      "key.namelength" : 5,
-                      "key.nameoffset" : 278,
-                      "key.offset" : 278,
+                      "key.length" : 17,
+                      "key.name" : "test_fibonacci",
+                      "key.namelength" : 14,
+                      "key.nameoffset" : 336,
+                      "key.offset" : 336,
                       "key.substructure" : [
                         {
-                          "key.bodylength" : 12,
-                          "key.bodyoffset" : 284,
+                          "key.bodylength" : 1,
+                          "key.bodyoffset" : 351,
                           "key.kind" : "source.lang.swift.expr.argument",
-                          "key.length" : 12,
-                          "key.offset" : 284,
-                          "key.substructure" : [
-                            {
-                              "key.bodylength" : 1,
-                              "key.bodyoffset" : 294,
-                              "key.kind" : "source.lang.swift.expr.call",
-                              "key.length" : 12,
-                              "key.name" : "fibonacci",
-                              "key.namelength" : 9,
-                              "key.nameoffset" : 284,
-                              "key.offset" : 284,
-                              "key.substructure" : [
-                                {
-                                  "key.bodylength" : 1,
-                                  "key.bodyoffset" : 294,
-                                  "key.kind" : "source.lang.swift.expr.argument",
-                                  "key.length" : 1,
-                                  "key.offset" : 294
-                                }
-                              ]
-                            }
-                          ]
+                          "key.length" : 1,
+                          "key.offset" : 351
                         }
                       ]
                     }
@@ -228,27 +267,27 @@
                 },
                 {
                   "key.bodylength" : 43,
-                  "key.bodyoffset" : 310,
+                  "key.bodyoffset" : 366,
                   "key.kind" : "source.lang.swift.stmt.brace",
                   "key.length" : 45,
-                  "key.offset" : 309,
+                  "key.offset" : 365,
                   "key.substructure" : [
                     {
                       "key.bodylength" : 22,
-                      "key.bodyoffset" : 325,
+                      "key.bodyoffset" : 381,
                       "key.kind" : "source.lang.swift.expr.call",
                       "key.length" : 29,
                       "key.name" : "print",
                       "key.namelength" : 5,
-                      "key.nameoffset" : 319,
-                      "key.offset" : 319,
+                      "key.nameoffset" : 375,
+                      "key.offset" : 375,
                       "key.substructure" : [
                         {
                           "key.bodylength" : 22,
-                          "key.bodyoffset" : 325,
+                          "key.bodyoffset" : 381,
                           "key.kind" : "source.lang.swift.expr.argument",
                           "key.length" : 22,
-                          "key.offset" : 325
+                          "key.offset" : 381
                         }
                       ]
                     }
@@ -260,27 +299,27 @@
         },
         {
           "key.bodylength" : 35,
-          "key.bodyoffset" : 363,
+          "key.bodyoffset" : 419,
           "key.kind" : "source.lang.swift.stmt.brace",
           "key.length" : 37,
-          "key.offset" : 362,
+          "key.offset" : 418,
           "key.substructure" : [
             {
               "key.bodylength" : 22,
-              "key.bodyoffset" : 374,
+              "key.bodyoffset" : 430,
               "key.kind" : "source.lang.swift.expr.call",
               "key.length" : 29,
               "key.name" : "print",
               "key.namelength" : 5,
-              "key.nameoffset" : 368,
-              "key.offset" : 368,
+              "key.nameoffset" : 424,
+              "key.offset" : 424,
               "key.substructure" : [
                 {
                   "key.bodylength" : 22,
-                  "key.bodyoffset" : 374,
+                  "key.bodyoffset" : 430,
                   "key.kind" : "source.lang.swift.expr.argument",
                   "key.length" : 22,
-                  "key.offset" : 374
+                  "key.offset" : 430
                 }
               ]
             }

@@ -1,0 +1,175 @@
+{
+  "key.diagnostic_stage" : "source.diagnostic.stage.swift.parse",
+  "key.length" : 236,
+  "key.offset" : 0,
+  "key.substructure" : [
+    {
+      "key.accessibility" : "source.lang.swift.accessibility.internal",
+      "key.bodylength" : 197,
+      "key.bodyoffset" : 30,
+      "key.kind" : "source.lang.swift.decl.function.free",
+      "key.length" : 210,
+      "key.name" : "aaa()",
+      "key.namelength" : 5,
+      "key.nameoffset" : 23,
+      "key.offset" : 18,
+      "key.substructure" : [
+        {
+          "key.bodylength" : 5,
+          "key.bodyoffset" : 41,
+          "key.kind" : "source.lang.swift.expr.call",
+          "key.length" : 12,
+          "key.name" : "print",
+          "key.namelength" : 5,
+          "key.nameoffset" : 35,
+          "key.offset" : 35,
+          "key.substructure" : [
+            {
+              "key.bodylength" : 5,
+              "key.bodyoffset" : 41,
+              "key.kind" : "source.lang.swift.expr.argument",
+              "key.length" : 5,
+              "key.offset" : 41
+            }
+          ]
+        },
+        {
+          "key.accessibility" : "source.lang.swift.accessibility.private",
+          "key.bodylength" : 26,
+          "key.bodyoffset" : 65,
+          "key.kind" : "source.lang.swift.decl.function.free",
+          "key.length" : 39,
+          "key.name" : "bbb()",
+          "key.namelength" : 5,
+          "key.nameoffset" : 58,
+          "key.offset" : 53,
+          "key.substructure" : [
+            {
+              "key.bodylength" : 5,
+              "key.bodyoffset" : 80,
+              "key.kind" : "source.lang.swift.expr.call",
+              "key.length" : 12,
+              "key.name" : "print",
+              "key.namelength" : 5,
+              "key.nameoffset" : 74,
+              "key.offset" : 74,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 5,
+                  "key.bodyoffset" : 80,
+                  "key.kind" : "source.lang.swift.expr.argument",
+                  "key.length" : 5,
+                  "key.offset" : 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key.accessibility" : "source.lang.swift.accessibility.private",
+          "key.bodylength" : 96,
+          "key.bodyoffset" : 109,
+          "key.kind" : "source.lang.swift.decl.function.free",
+          "key.length" : 109,
+          "key.name" : "ccc()",
+          "key.namelength" : 5,
+          "key.nameoffset" : 102,
+          "key.offset" : 97,
+          "key.substructure" : [
+            {
+              "key.bodylength" : 5,
+              "key.bodyoffset" : 124,
+              "key.kind" : "source.lang.swift.expr.call",
+              "key.length" : 12,
+              "key.name" : "print",
+              "key.namelength" : 5,
+              "key.nameoffset" : 118,
+              "key.offset" : 118,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 5,
+                  "key.bodyoffset" : 124,
+                  "key.kind" : "source.lang.swift.expr.argument",
+                  "key.length" : 5,
+                  "key.offset" : 124
+                }
+              ]
+            },
+            {
+              "key.accessibility" : "source.lang.swift.accessibility.private",
+              "key.bodylength" : 34,
+              "key.bodyoffset" : 151,
+              "key.kind" : "source.lang.swift.decl.function.free",
+              "key.length" : 47,
+              "key.name" : "ddd()",
+              "key.namelength" : 5,
+              "key.nameoffset" : 144,
+              "key.offset" : 139,
+              "key.substructure" : [
+                {
+                  "key.bodylength" : 5,
+                  "key.bodyoffset" : 170,
+                  "key.kind" : "source.lang.swift.expr.call",
+                  "key.length" : 12,
+                  "key.name" : "print",
+                  "key.namelength" : 5,
+                  "key.nameoffset" : 164,
+                  "key.offset" : 164,
+                  "key.substructure" : [
+                    {
+                      "key.bodylength" : 5,
+                      "key.bodyoffset" : 170,
+                      "key.kind" : "source.lang.swift.expr.argument",
+                      "key.length" : 5,
+                      "key.offset" : 170
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key.bodylength" : 0,
+              "key.bodyoffset" : 199,
+              "key.kind" : "source.lang.swift.expr.call",
+              "key.length" : 5,
+              "key.name" : "ddd",
+              "key.namelength" : 3,
+              "key.nameoffset" : 195,
+              "key.offset" : 195
+            }
+          ]
+        },
+        {
+          "key.bodylength" : 0,
+          "key.bodyoffset" : 215,
+          "key.kind" : "source.lang.swift.expr.call",
+          "key.length" : 5,
+          "key.name" : "bbb",
+          "key.namelength" : 3,
+          "key.nameoffset" : 211,
+          "key.offset" : 211
+        },
+        {
+          "key.bodylength" : 0,
+          "key.bodyoffset" : 225,
+          "key.kind" : "source.lang.swift.expr.call",
+          "key.length" : 5,
+          "key.name" : "ccc",
+          "key.namelength" : 3,
+          "key.nameoffset" : 221,
+          "key.offset" : 221
+        }
+      ]
+    },
+    {
+      "key.bodylength" : 0,
+      "key.bodyoffset" : 234,
+      "key.kind" : "source.lang.swift.expr.call",
+      "key.length" : 5,
+      "key.name" : "aaa",
+      "key.namelength" : 3,
+      "key.nameoffset" : 230,
+      "key.offset" : 230
+    }
+  ]
+}

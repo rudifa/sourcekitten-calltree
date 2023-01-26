@@ -1,0 +1,129 @@
+Processing file: sample_script_0.json 
+
+name: None key.offset: 0
+self.stack: ['unnamed']
+
+name: fibonacci key.offset: 18
+self.stack: ['unnamed', 'fibonacci']
+=== func declaration: fibonacci
+
+name: n key.offset: 33
+self.stack: ['unnamed', 'fibonacci', 'n']
+
+name: None key.offset: 56
+self.stack: ['unnamed', 'fibonacci', 'unnamed']
+
+name: None key.offset: 59
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed']
+
+name: None key.offset: 66
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed']
+
+name: None key.offset: 96
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed']
+
+name: fibonacci key.offset: 113
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed', 'fibonacci']
+--- func call: unnamed ---> fibonacci
+
+name: None key.offset: 123
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed', 'fibonacci', 'unnamed']
+
+name: fibonacci key.offset: 132
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed', 'fibonacci']
+--- func call: unnamed ---> fibonacci
+
+name: None key.offset: 142
+self.stack: ['unnamed', 'fibonacci', 'unnamed', 'unnamed', 'fibonacci', 'unnamed']
+
+name: test_fibonacci key.offset: 158
+self.stack: ['unnamed', 'test_fibonacci']
+=== func declaration: test_fibonacci
+
+name: n key.offset: 178
+self.stack: ['unnamed', 'test_fibonacci', 'n']
+
+name: print key.offset: 194
+self.stack: ['unnamed', 'test_fibonacci', 'print']
+--- func call: test_fibonacci ---> print
+
+name: None key.offset: 200
+self.stack: ['unnamed', 'test_fibonacci', 'print', 'unnamed']
+
+name: fibonacci key.offset: 200
+self.stack: ['unnamed', 'test_fibonacci', 'print', 'unnamed', 'fibonacci']
+--- func call: unnamed ---> fibonacci
+
+name: None key.offset: 210
+self.stack: ['unnamed', 'test_fibonacci', 'print', 'unnamed', 'fibonacci', 'unnamed']
+
+name: None key.offset: 217
+self.stack: ['unnamed', 'unnamed']
+
+name: None key.offset: 220
+self.stack: ['unnamed', 'unnamed', 'unnamed']
+
+name: None key.offset: 252
+self.stack: ['unnamed', 'unnamed', 'unnamed']
+
+name: arg key.offset: 257
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'arg']
+
+name: CommandLine.arguments key.offset: 267
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'CommandLine.arguments']
+--- func call: unnamed ---> CommandLine.arguments
+
+name: None key.offset: 289
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'CommandLine.arguments', 'unnamed']
+
+name: None key.offset: 297
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed']
+
+name: None key.offset: 300
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed']
+
+name: n key.offset: 304
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'n']
+
+name: Int key.offset: 308
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'Int']
+--- func call: unnamed ---> Int
+
+name: None key.offset: 312
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'Int', 'unnamed']
+
+name: None key.offset: 326
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed']
+
+name: test_fibonacci key.offset: 336
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed', 'test_fibonacci']
+--- func call: unnamed ---> test_fibonacci
+
+name: None key.offset: 351
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed', 'test_fibonacci', 'unnamed']
+
+name: None key.offset: 365
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed']
+
+name: print key.offset: 375
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed', 'print']
+--- func call: unnamed ---> print
+
+name: None key.offset: 381
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'unnamed', 'unnamed', 'print', 'unnamed']
+
+name: None key.offset: 418
+self.stack: ['unnamed', 'unnamed', 'unnamed']
+
+name: print key.offset: 424
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'print']
+--- func call: unnamed ---> print
+
+name: None key.offset: 430
+self.stack: ['unnamed', 'unnamed', 'unnamed', 'print', 'unnamed']
+{
+    "fibonacci": [],
+    "test_fibonacci": [
+        "print"
+    ]
+}

@@ -8,12 +8,15 @@ func fibonacci(_ n: Int) -> Int {
     }
 }
 
+func test_fibonacci(_ n: Int) {
+    print(fibonacci(n))
+}
 
 if CommandLine.arguments.count > 1 {
 
   let arg = CommandLine.arguments[1] 
     if let n = Int(arg), n <= 40 {
-        print(fibonacci(n))
+        test_fibonacci(n)
     } else {
         print("Usage: fibonacci <n>")
     }

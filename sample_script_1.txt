@@ -1,0 +1,81 @@
+Processing file: sample_script_1.json 
+
+name: None key.offset: 0
+self.stack: ['unnamed']
+
+name: aaa key.offset: 18
+self.stack: ['unnamed', 'aaa']
+=== func declaration: aaa
+
+name: print key.offset: 35
+self.stack: ['unnamed', 'aaa', 'print']
+--- func call: aaa ---> print
+
+name: None key.offset: 41
+self.stack: ['unnamed', 'aaa', 'print', 'unnamed']
+
+name: bbb key.offset: 53
+self.stack: ['unnamed', 'aaa', 'bbb']
+=== func declaration: bbb
+
+name: print key.offset: 74
+self.stack: ['unnamed', 'aaa', 'bbb', 'print']
+--- func call: bbb ---> print
+
+name: None key.offset: 80
+self.stack: ['unnamed', 'aaa', 'bbb', 'print', 'unnamed']
+
+name: ccc key.offset: 97
+self.stack: ['unnamed', 'aaa', 'ccc']
+=== func declaration: ccc
+
+name: print key.offset: 118
+self.stack: ['unnamed', 'aaa', 'ccc', 'print']
+--- func call: ccc ---> print
+
+name: None key.offset: 124
+self.stack: ['unnamed', 'aaa', 'ccc', 'print', 'unnamed']
+
+name: ddd key.offset: 139
+self.stack: ['unnamed', 'aaa', 'ccc', 'ddd']
+=== func declaration: ddd
+
+name: print key.offset: 164
+self.stack: ['unnamed', 'aaa', 'ccc', 'ddd', 'print']
+--- func call: ddd ---> print
+
+name: None key.offset: 170
+self.stack: ['unnamed', 'aaa', 'ccc', 'ddd', 'print', 'unnamed']
+
+name: ddd key.offset: 195
+self.stack: ['unnamed', 'aaa', 'ccc', 'ddd']
+--- func call: ccc ---> ddd
+
+name: bbb key.offset: 211
+self.stack: ['unnamed', 'aaa', 'bbb']
+--- func call: aaa ---> bbb
+
+name: ccc key.offset: 221
+self.stack: ['unnamed', 'aaa', 'ccc']
+--- func call: aaa ---> ccc
+
+name: aaa key.offset: 230
+self.stack: ['unnamed', 'aaa']
+--- func call: unnamed ---> aaa
+{
+    "aaa": [
+        "ccc",
+        "bbb",
+        "print"
+    ],
+    "bbb": [
+        "print"
+    ],
+    "ccc": [
+        "ddd",
+        "print"
+    ],
+    "ddd": [
+        "print"
+    ]
+}
