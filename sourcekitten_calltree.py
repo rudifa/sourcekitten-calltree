@@ -36,48 +36,17 @@ def drop_suffix_parens(string):
     return re.sub("\(.*\)$", "", string)
 
 
-class VisitorFuncDecl:
-    """ Recognizes function method declarations in visited nodes.
-        Collects their names in a list."""
-
-    def __init__(self):
-        self.method_names = []
-
-    def process(self, node):
-        if isinstance(node, dict):
-            try:
-                if node["key.kind"] == "source.lang.swift.decl.function.method.instance" or node["key.kind"] == "source.lang.swift.decl.function.free":
-                    self.method_names.append(node["key.name"])
-            except KeyError:
-                pass
-
-
-class VisitorExprCall:
-    """ Recognizes function call in visited nodes.
-        Collects their names in a list."""
-
-    def __init__(self):
-        self.method_names = []
-
-    def process(self, node):
-        if isinstance(node, dict):
-            try:
-                if node["key.kind"] == "source.lang.swift.expr.call":
-                    self.method_names.append(node["key.name"])
-            except KeyError:
-                pass
-
-
 class VisitorFuncDeclAndCall:
     """ Recognizes function declarations in visited nodes.
         Collects their names in a list.
         Recognizes function calls in visited nodes
         and collects the called functions in an array per calling function."""
 
-    def __init__(self, exclusion_list=[]):
+    def __init__(self, exclusion_list=[], verbose=False):
         self.funcs_and_calls = {}  # dict where key: method name, value: set of callee names
         self.exclusion_list = exclusion_list
         self.stack = []
+        self.verbose = verbose
 
     def find_declared_func(self):
         """find the last not None item in the stack"""
@@ -88,25 +57,26 @@ class VisitorFuncDeclAndCall:
 
     def process(self, node):
         if isinstance(node, dict):
-            print()
+            print() if self.verbose else None
             # print("name:", drop_suffix_parens(
             #     node["key.name"]) if "key.name" in node else "None",
             #     "key.offset:", node["key.offset"])
-            print("self.stack:", self.stack, "key.offset:", node["key.offset"])
+            print("self.stack:", self.stack, "key.offset:",
+                  node["key.offset"]) if self.verbose else None
             try:
                 if node["key.kind"] in ["source.lang.swift.decl.function.method.instance", "source.lang.swift.decl.function.free"]:
                     # func declaration detected
                     declared_func = drop_suffix_parens(node["key.name"])
                     self.funcs_and_calls.update({declared_func: set()})
                     self.stack[-1] = declared_func
-                    print("=== func declaration:", declared_func)
+                    print("=== declare:", declared_func) if self.verbose else None
                 elif node["key.kind"] == "source.lang.swift.expr.call":
                     # func call detected
                     if "key.name" in node:
                         called_func = node["key.name"]
                         calling_func = self.find_declared_func()
                         print(
-                            f"--- func call: {calling_func} ---> {called_func}")
+                            f"--- call: {calling_func} ---> {called_func}") if self.verbose else None
                         if called_func not in self.exclusion_list:
                             self.funcs_and_calls[calling_func].add(called_func)
             except KeyError:
@@ -149,20 +119,9 @@ def plotter(funcs_and_calls, basename):
 # runners
 
 
-def run_visitor_func_decl(top_node):
-    visitor_decl = VisitorFuncDecl()
-    walker(top_node, visitor_decl)
-    print("visitor_decl:", visitor_decl.method_names)
-
-
-def run_visitor_expr_call(top_node):
-    visitor_call = VisitorExprCall()
-    walker(top_node, visitor_call)
-    print("visitor_call:", visitor_call.method_names)
-
-
 def run_visitor_func_decl_and_call(top_node, exclude_list, basename):
-    visitor = VisitorFuncDeclAndCall(exclude_list)
+    verbose = False
+    visitor = VisitorFuncDeclAndCall(exclude_list, verbose)
     walker(top_node, visitor)
     # print("visitor:", visitor.funcs_and_calls)
     json_str = json.dumps(visitor.json_compatible_result(), indent=4)
